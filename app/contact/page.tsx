@@ -12,7 +12,7 @@ export default function Contact() {
     <>
       <section className="border-b border-white/[0.06]">
         <div className="max-w-3xl mx-auto px-6 py-20">
-          <div className="text-xs tracking-[0.4em] text-amber-300 mb-4 font-bold">
+          <div className="text-xs tracking-[0.4em] text-sky-400 mb-4 font-bold">
             CONTACT
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-8">
@@ -102,9 +102,9 @@ function ContactCard({
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      className="block border border-white/[0.06] rounded p-6 bg-white/[0.015] hover:border-amber-300/30 transition-colors"
+      className="block border border-white/[0.06] rounded p-6 bg-white/[0.015] hover:border-sky-400/30 transition-colors"
     >
-      <div className="text-xs tracking-[0.3em] text-amber-300/80 font-bold mb-2">
+      <div className="text-xs tracking-[0.3em] text-sky-400/80 font-bold mb-2">
         {label}
       </div>
       <div className="text-base font-bold text-white mb-2">{primary}</div>

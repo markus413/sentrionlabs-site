@@ -18,7 +18,7 @@ export default function Canary() {
     <>
       <section className="border-b border-white/[0.06]">
         <div className="max-w-3xl mx-auto px-6 py-20">
-          <div className="text-xs tracking-[0.4em] text-amber-300 mb-4 font-bold">
+          <div className="text-xs tracking-[0.4em] text-sky-400 mb-4 font-bold">
             WARRANT CANARY
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-8">
@@ -28,7 +28,7 @@ export default function Canary() {
           </h1>
           <p className="text-slate-400 leading-relaxed font-sans">
             We commit to refreshing this statement on or before{" "}
-            <span className="text-amber-300 font-bold">{NEXT_REFRESH_BY}</span>.
+            <span className="text-sky-400 font-bold">{NEXT_REFRESH_BY}</span>.
             {" "}If this page disappears, if the date stops updating, or
             if the language of this statement changes in any
             substantive way, the canary has triggered. Customers should

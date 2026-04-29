@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
-/* Always-dark site — corporate brand stays consistent with the
-   product (Sentinel OC). Amber accent vs. cyan distinguishes the
-   parent brand from the product without breaking the family look. */
+/* Always-dark site. Accent: sky-500 — deeper/richer than sentineloc's
+   cyan-400, reads as corporate-blue not electric-cyan. */
 :root {
-  --background: #06090f;
+  --background: #04070d;
   --foreground: #e2e8f0;
-  --accent-amber: #fbbf24;
+  --accent-blue: #0ea5e9;
+  --accent-blue-bright: #38bdf8;
 }
 
 @theme inline {
@@ -24,25 +24,92 @@ body {
 
 .bg-grid {
   background-image:
-    linear-gradient(rgba(252, 211, 77, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(252, 211, 77, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
-@keyframes sweep {
-  from { transform: translateX(-100%); }
-  to   { transform: translateX(400%); }
+/* Hexagonal pattern — cybersecurity-template staple, low-opacity */
+.bg-hex {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'><path d='M28 0L56 16.18V49.82L28 66 0 49.82V16.18z M28 50L56 66.18V99.82L28 116 0 99.82V66.18z' fill='none' stroke='%2338bdf8' stroke-opacity='0.04' stroke-width='1'/></svg>");
 }
-.sweep-line {
+
+/* Hero deep-blue radial gradient — Zyber-style ambient */
+.hero-bg {
   position: relative;
-  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(14, 165, 233, 0.18), transparent 70%),
+    radial-gradient(ellipse 60% 80% at 100% 50%, rgba(30, 64, 175, 0.22), transparent 60%),
+    linear-gradient(180deg, #0a1628 0%, #04070d 100%);
 }
-.sweep-line::after {
-  content: "";
+
+/* True-3D rotating globe — outer wrapper gets perspective, inner
+   wrapper rotates Y with preserve-3d, individual dots are placed
+   in 3D space and inherit the rotation. */
+@keyframes globe-3d-rotate {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+.globe-3d-spin {
+  animation: globe-3d-rotate 32s linear infinite;
+  transform-style: preserve-3d;
+}
+.globe-dot {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(252, 211, 77, 0.5), transparent);
-  width: 30%;
-  animation: sweep 6s linear infinite;
-  pointer-events: none;
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 5px rgba(56, 189, 248, 0.7);
+  /* Always face the camera so they read as round dots, not ovals */
+  backface-visibility: visible;
+}
+
+/* Radar pulse rings — extended range (3x): scale up to 4.8x.
+   Slower pulse + staggered so all three are visible at once. */
+@keyframes ring-pulse {
+  0%   { transform: scale(0.4); opacity: 0; }
+  8%   { opacity: 0.55; }
+  100% { transform: scale(4.8); opacity: 0; }
+}
+.ring-pulse-1 { animation: ring-pulse 9s ease-out infinite; }
+.ring-pulse-2 { animation: ring-pulse 9s ease-out infinite 3s; }
+.ring-pulse-3 { animation: ring-pulse 9s ease-out infinite 6s; }
+
+/* Vertical falling data-stream lines (right edge of hero) */
+@keyframes stream-fall {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(100vh); }
+}
+.stream {
+  position: absolute;
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(180deg, transparent, rgba(56, 189, 248, 0.6), transparent);
+  animation: stream-fall linear infinite;
+}
+
+/* CTA band gradient */
+.cta-band {
+  background:
+    radial-gradient(ellipse at top left, rgba(14, 165, 233, 0.12), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(30, 64, 175, 0.10), transparent 50%),
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
+}
+
+/* Hex-shaped icon badge */
+.hex-badge {
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+}
+
+/* Card hover accent glow */
+.card-accent:hover {
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.30), 0 0 30px -8px rgba(56, 189, 248, 0.25);
+}
+
+/* Section-divider scanning bar */
+.scan-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.4), transparent);
 }

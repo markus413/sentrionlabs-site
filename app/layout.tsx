@@ -44,9 +44,9 @@ function SiteHeader() {
     <header className="border-b border-white/[0.06] bg-[#06090f]/95 sticky top-0 z-40 backdrop-blur">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center gap-8">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-2 h-2 rounded-full bg-amber-300 shadow-[0_0_10px_rgba(252,211,77,0.6)]" />
+          <div className="w-2 h-2 rounded-full bg-sky-400 shadow-[0_0_10px_rgba(252,211,77,0.6)]" />
           <span className="text-sm tracking-[0.3em] font-bold text-white">
-            SENTRION<span className="text-amber-300">·</span>LABS
+            SENTRION<span className="text-sky-400">·</span>LABS
           </span>
         </Link>
         <nav className="flex items-center gap-6 text-xs tracking-widest text-slate-400">
@@ -74,7 +74,7 @@ function SiteFooter() {
       <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8 text-xs">
         <div>
           <div className="tracking-[0.3em] font-bold text-white mb-3">
-            SENTRION<span className="text-amber-300">·</span>LABS
+            SENTRION<span className="text-sky-400">·</span>LABS
           </div>
           <p className="text-slate-500 leading-relaxed">
             Privacy-first software. Trademark filed 2026.

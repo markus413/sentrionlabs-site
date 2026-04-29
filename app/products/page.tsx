@@ -13,7 +13,7 @@ export default function Products() {
     <>
       <section className="border-b border-white/[0.06]">
         <div className="max-w-5xl mx-auto px-6 py-20">
-          <div className="text-xs tracking-[0.4em] text-amber-300 mb-4 font-bold">
+          <div className="text-xs tracking-[0.4em] text-sky-400 mb-4 font-bold">
             PRODUCT FAMILY
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -106,7 +106,7 @@ export default function Products() {
             We don&apos;t claim &ldquo;military-grade&rdquo; anything.
             We don&apos;t claim &ldquo;unhackable.&rdquo; We tell you
             what each product defeats AND what it doesn&apos;t. The
-            <Link href="/canary/" className="text-amber-300 hover:underline">
+            <Link href="/canary/" className="text-sky-400 hover:underline">
               {" "}warrant canary
             </Link>
             {" "}is the receipt.
@@ -155,7 +155,7 @@ function ProductRow({
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-5 py-2 text-xs tracking-widest font-bold rounded bg-amber-300 text-[#06090f] hover:bg-amber-200 transition-colors"
+              className="inline-block px-5 py-2 text-xs tracking-widest font-bold rounded bg-sky-400 text-[#06090f] hover:bg-sky-300 transition-colors"
             >
               VISIT SENTINELOC.IO ↗
             </a>
