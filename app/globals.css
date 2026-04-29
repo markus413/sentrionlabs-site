@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
+/* Always-dark site — corporate brand stays consistent with the
+   product (Sentinel OC). Amber accent vs. cyan distinguishes the
+   parent brand from the product without breaking the family look. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #06090f;
+  --foreground: #e2e8f0;
+  --accent-amber: #fbbf24;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-mono: var(--font-mono);
+  --font-sans: var(--font-sans);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(252, 211, 77, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(252, 211, 77, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@keyframes sweep {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(400%); }
+}
+.sweep-line {
+  position: relative;
+  overflow: hidden;
+}
+.sweep-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(252, 211, 77, 0.5), transparent);
+  width: 30%;
+  animation: sweep 6s linear infinite;
+  pointer-events: none;
 }
