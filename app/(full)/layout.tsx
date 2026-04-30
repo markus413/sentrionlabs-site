@@ -25,15 +25,15 @@ function SiteHeader() {
             SENTRION<span className="text-sky-400">·</span>LABS
           </span>
         </Link>
-        <nav className="flex items-center gap-6 text-xs tracking-widest text-slate-400">
-          <Link href="/products/" className="hover:text-white transition-colors">
-            PRODUCTS
-          </Link>
-          <Link href="/about/" className="hover:text-white transition-colors">
-            ABOUT
+        <nav className="flex items-center gap-5 text-xs tracking-widest text-slate-400">
+          <Link href="/security/" className="hover:text-white transition-colors">
+            SECURITY
           </Link>
           <Link href="/canary/" className="hover:text-white transition-colors">
             CANARY
+          </Link>
+          <Link href="/commitments/" className="hover:text-white transition-colors">
+            COMMITMENTS
           </Link>
           <Link href="/contact/" className="hover:text-white transition-colors">
             CONTACT
@@ -72,13 +72,19 @@ function SiteFooter() {
           <div className="tracking-widest text-slate-500 mb-3">COMPANY</div>
           <ul className="space-y-2 text-slate-400">
             <li>
-              <Link href="/about/" className="hover:text-white">About</Link>
+              <Link href="/security/" className="hover:text-white">Security</Link>
             </li>
             <li>
               <Link href="/canary/" className="hover:text-white">Warrant canary</Link>
             </li>
             <li>
+              <Link href="/commitments/" className="hover:text-white">Commitments</Link>
+            </li>
+            <li>
               <Link href="/contact/" className="hover:text-white">Contact</Link>
+            </li>
+            <li>
+              <Link href="/legal/" className="hover:text-white">Legal</Link>
             </li>
           </ul>
         </div>
